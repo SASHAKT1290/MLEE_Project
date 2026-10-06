@@ -1,0 +1,16 @@
+* Boost converter: Vin=12V, D~0.5, fsw=100kHz
+Vin   in   0    12
+L1    in   sw   100u Rser=0.05
+S1    sw   0    gate 0 SWMOD
+Vg    gate 0    PULSE(0 5 0 10n 10n 5u 10u)
+D1    sw   out  DMOD
+C1    out  0    47u Rser=0.05
+Rload out  0    24
+
+.model SWMOD SW(Ron=0.05 Roff=1Meg Vt=2.5 Vh=0.5)
+.model DMOD  D(Is=1e-8 Rs=0.05 N=1.05)
+
+.options plotwinsize=0 numdgt=15
+.tran 0 20m 0 0.1u
+.save V(out) I(L1) V(gate)
+.end
