@@ -47,5 +47,5 @@ boost-sr/
 ├── data/
 │   └── boost_clean.csv          # Clean steady-state waveform dataset
 └── notebooks/
-    └── 01_export_and_sanity_check.ipynb  # Data verification & preprocessing notebook
+    └── mlee_project1.ipynb      # Notebook for data export & sanity check
 ```
